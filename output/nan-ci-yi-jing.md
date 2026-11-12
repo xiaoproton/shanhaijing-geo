@@ -1,0 +1,67 @@
+# 南山經 · 南次一經 — locating clauses
+
+Source: zh.wikisource, `山海經/南山經`
+Records: 17 (from 9 entries + 1 小結)
+Generated from: `data/shanhaijing_locations.jsonl`
+
+---
+
+**N1-01** · 首山
+> 南山經之首曰䧿山
+
+**N1-02** · 首山
+> (䧿山)其首曰招搖之山
+
+**N1-03** · 水岸
+> (招搖之山)臨於西海之上
+
+**N1-04** · 水系
+> (招搖之山)麗𪊨之水出焉，而西流注於海
+
+**N1-05** · 链式方位距离
+> (招搖之山)又東三百里，曰堂庭之山
+
+**N1-06** · 链式方位距离
+> (堂庭之山)又東三百八十里，曰猨翼之山
+
+**N1-07** · 链式方位距离
+> (猨翼之山)又東三百七十里，曰杻陽之山
+
+**N1-08** · 水系
+> (杻陽之山)怪水出焉，而東流注於憲翼之水
+
+**N1-09** · 链式方位距离
+> (杻陽之山)又東三百里柢山
+
+**N1-10** · 链式方位距离
+> (柢山)又東四百里，曰亶爰之山
+
+**N1-11** · 链式方位距离
+> (亶爰之山)又東三百里，曰基山
+
+**N1-12** · 链式方位距离
+> (基山)又東三百里，曰青丘之山
+
+**N1-13** · 水系
+> (青丘之山)英水出焉，南流注于即翼之澤
+
+**N1-14** · 链式方位距离
+> (青丘之山)又東三百五十里，曰箕尾之山
+
+**N1-15** · 水岸
+> (箕尾之山)其尾踆於東海
+
+**N1-16** · 水系
+> (箕尾之山)汸水出焉，而南流注於淯
+
+**N1-17** · 小结
+> 凡䧿山之首，自招搖之山，以至箕尾之山，凡十山，二千九百五十里
+
+---
+
+## Observations (recorded, not corrected)
+
+1. **Checksum mismatch** — the 小結 states **十山 / 二千九百五十里**, but the chain lists **9** mountains summing to **2700** 里. A known textual issue; left verbatim for stage 2.
+2. **柢山 entry lacks 曰** — the source reads `又東三百里柢山`. Preserved as-is.
+3. **No 望 statements** in this chain — the `東望X` boundary case first appears in 南次二經.
+4. **Vague locators present** — `臨於西海之上` and `其尾踆於東海` carry no distance. Both included, typed 水岸.
