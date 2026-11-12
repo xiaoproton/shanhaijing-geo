@@ -5,7 +5,7 @@
 Extract every locating clause from all 18 卷, verbatim, with no interpretation.
 
 - 🟡 Pilot: 南次一經 (17 records)
-- ⬜ 南次二經 · 南次三經
+- ✅ 南次二經 (34 records) · 南次三經 (21 records) · 卷總 (1 record) — **南山經 complete, 73 records**
 - ⬜ 西山經 (4 chains) · 北山經 (3) · 東山經 (4) · 中山經 (12)
 - ⬜ 海外四經 · 海內四經 · 大荒四經 · 海內經 (qualitative layer)
 

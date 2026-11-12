@@ -54,5 +54,5 @@ Checksums, cross-source diffs and consistency checks belong to **stage 2**. Duri
 
 ## 6. Boundary cases
 
-- **望 statements** (`東望X`) — line-of-sight; arguably locating. *Not yet decided.*
+- **望 statements** (`東望X`) — line-of-sight; arguably locating. **Currently included**, typed `望`, pending confirmation. They pass the inclusion test (they assert a spatial relation), so they are kept rather than silently dropped.
 - **郭璞注** — commentary, not the classic text. Kept out of the main database.

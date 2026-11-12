@@ -22,7 +22,8 @@ One JSON object per line (JSONL), UTF-8, no trailing commas.
 | `水系` | water source + flow direction + destination |
 | `水岸` | borders a sea / lake (usually no distance) |
 | `小结` | chain summary (the text's own checksum) |
-| `相对方位` | relative position (海經 layer) |
+| `望` | line-of-sight toward a named place (`北望具區`) |
+| `相对方位` | relative position, no distance (`西臨流黃`, `其南有谷`) |
 | `无距离方位` | direction without distance |
 | `无方位距离` | distance without direction |
 | `全局尺度` | global extent statements |

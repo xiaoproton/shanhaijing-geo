@@ -1,7 +1,7 @@
 # 南山經 · 南次一經 — locating clauses
 
 Source: zh.wikisource, `山海經/南山經`
-Records: 17 (from 9 entries + 1 小結)
+Records: 17
 Generated from: `data/shanhaijing_locations.jsonl`
 
 ---
@@ -14,6 +14,7 @@ Generated from: `data/shanhaijing_locations.jsonl`
 
 **N1-03** · 水岸
 > (招搖之山)臨於西海之上
+*no distance*
 
 **N1-04** · 水系
 > (招搖之山)麗𪊨之水出焉，而西流注於海
@@ -32,6 +33,7 @@ Generated from: `data/shanhaijing_locations.jsonl`
 
 **N1-09** · 链式方位距离
 > (杻陽之山)又東三百里柢山
+*source lacks 曰*
 
 **N1-10** · 链式方位距离
 > (柢山)又東四百里，曰亶爰之山
@@ -50,18 +52,11 @@ Generated from: `data/shanhaijing_locations.jsonl`
 
 **N1-15** · 水岸
 > (箕尾之山)其尾踆於東海
+*no distance*
 
 **N1-16** · 水系
 > (箕尾之山)汸水出焉，而南流注於淯
 
 **N1-17** · 小结
 > 凡䧿山之首，自招搖之山，以至箕尾之山，凡十山，二千九百五十里
-
----
-
-## Observations (recorded, not corrected)
-
-1. **Checksum mismatch** — the 小結 states **十山 / 二千九百五十里**, but the chain lists **9** mountains summing to **2700** 里. A known textual issue; left verbatim for stage 2.
-2. **柢山 entry lacks 曰** — the source reads `又東三百里柢山`. Preserved as-is.
-3. **No 望 statements** in this chain — the `東望X` boundary case first appears in 南次二經.
-4. **Vague locators present** — `臨於西海之上` and `其尾踆於東海` carry no distance. Both included, typed 水岸.
+*checksum: text states 10 mountains / 2950 li; the chain lists 9 mountains summing 2700 li*
