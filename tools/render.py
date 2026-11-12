@@ -31,6 +31,7 @@ SLUG = {
     "東次四經": "dong-ci-si-jing",
     "東山經（總）": "dong-shan-jing-total",
     "中次一經": "zhong-ci-yi-jing",
+    "中山經": "zhong-ci-yi-jing",
     "中次二經": "zhong-ci-er-jing",
     "中次三經": "zhong-ci-san-jing",
     "中次四經": "zhong-ci-si-jing",
@@ -43,6 +44,7 @@ SLUG = {
     "中次十一經": "zhong-ci-shi-yi-jing",
     "中次十二經": "zhong-ci-shi-er-jing",
     "中山經（總）": "zhong-shan-jing-total",
+    "五臧山經（總）": "wu-zang-shan-jing-total",
 }
 
 SOURCE = {

@@ -19,7 +19,7 @@ DIST = rf"{NUM}{LI}(?:{NUM}{LI})?"
 RE_HEAD = re.compile(r"^(.*?)(?:之首[，,]?曰|之首曰)([^，。；]+)")
 RE_HEAD2 = re.compile(r"^其首曰([^，。；]+)")
 RE_CHAIN_CORE = re.compile(rf"^(?:又)?(?:{DIRS})?(?:水行)?{DIST}(?:[，,]流沙{NUM}{LI})?")
-RE_CHAIN_TAIL = re.compile(r"^[，,]?(?:曰|至[於于]?)[^，。；]+")
+RE_CHAIN_TAIL = re.compile(r"^[，,]?(?:(?:曰|至[於于]?)[^，。；]+|有[^，。；]*(?:之山|山|之丘|丘|之尾|之首|澤|沙))")
 RE_CHAIN_BARE = re.compile(r"^[，,]?[^，。；]{1,10}(?:之山|山|之丘|丘|之尾|之首|澤|沙)")
 RE_CHAIN3 = re.compile(rf"^行{NUM}{LI}[，,]有山焉[，,]曰[^，。；]+")
 RE_CHAIN_NAME = re.compile(
@@ -29,7 +29,7 @@ RE_CHAIN_NAME = re.compile(
 )
 RE_CHAIN2 = re.compile(r"^至[於于][^，。；]+")
 RE_CHAIN2_NAME = re.compile(r"^至[於于](.+)$")
-RE_WATER = re.compile(r"^[^，。；]*水(?:出焉|出于)[^，。；]*(?:[，,。][^，。；]*(?:流|注|潛|潜|名曰)[^，。；]*)?")
+RE_WATER = re.compile(r"^[^，。；]*水(?:出焉|出于)[^，。；]*(?:[，,。][^，。；]*(?:流|注|潛|潜|名曰|入)[^，。；]*)?")
 RE_WANG = re.compile(rf"^(?:{DIRS})望[^，。；]+")
 RE_ADJ = re.compile(r"^(?:在[^，。；]+之[東南西北]|臨[^，。；]+|[東南西北]臨[^，。；]+|其[東南西北]有[^，。；]*(?:，曰[^，。；]*)?)")
 RE_SHORE = re.compile(r"^(?:處于|是錞于)[^，。；]+")
@@ -48,7 +48,7 @@ PREFIX = {
     "西山經之首": "X1", "西次二經": "X2", "西次三經": "X3", "西次四經": "X4",
     "北山經之首": "B1", "北次二經": "B2", "北次三經": "B3",
     "東山經之首": "D1", "東次二經": "D2", "東次三經": "D3", "東次四經": "D4",
-    "中山經之首": "Z1", "中次二經": "Z2", "中次三經": "Z3", "中次四經": "Z4",
+    "中山經": "Z1", "中山經之首": "Z1", "中次二經": "Z2", "中次三經": "Z3", "中次四經": "Z4",
     "中次五經": "Z5", "中次六經": "Z6", "中次七經": "Z7", "中次八經": "Z8",
     "中次九經": "Z9", "中次十經": "Z10", "中次十一經": "Z11", "中次十二經": "Z12",
 }
@@ -96,7 +96,7 @@ def extract(body, chain, prefix, volume):
                     if b:
                         clause += b.group(0)
                         rest = rest[b.end():]
-                nm = re.search(r"(?:曰|至[於于]?)([^，。；]+)$", clause) or RE_CHAIN_NAME.match(clause)
+                nm = re.search(r"(?:曰|至[於于]?|有)([^，。；]*(?:之山|山|之丘|丘|之尾|之首|澤|沙))$", clause) or RE_CHAIN_NAME.match(clause)
                 recs.append(("链式方位距离", clause, prev))
                 if nm:
                     prev = nm.group(1).strip()
