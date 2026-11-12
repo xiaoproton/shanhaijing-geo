@@ -4,16 +4,16 @@
 
 Extract every locating clause from all 18 卷, verbatim, with no interpretation.
 
-- 🟡 Pilot: 南次一經 (17 records)
-- ✅ 南次二經 (34 records) · 南次三經 (21 records) · 卷總 (1 record) — **南山經 complete, 73 records**
-- ⬜ 西山經 (4 chains) · 北山經 (3) · 東山經 (4) · 中山經 (12)
-- ⬜ 海外四經 · 海內四經 · 大荒四經 · 海內經 (qualitative layer)
+- ✅ **Complete 2026-11-12 — 1031 records**
+  - 五藏山經 (749): 南山經 73 · 西山經 153 · 北山經 177 · 東山經 86 · 中山經 303 · 五臧山經 總 2
+  - 海經 (237): 海外四經 · 海內四經 · 大荒四經 · 海內經
+- 45 rendered lists in `output/` (filed by origin volume), 39 audit reports in `docs/audit/`
 
 ## Stage 2 — Validation
 
 - ⬜ Checksum each chain against its own 小結 (山數 + 總里數)
-- ⬜ Cross-check against a second independent transcription
 - ⬜ Flag every mismatch — never correct silently
+- 🟡 **Lead — the 山經 ↔ 海經 seam**: the join is in 海內四經, not 海外/大荒. 海內東經 holds a river-source gazetteer (10 of its 27 rivers are also named in 山經) and 海內西經 restates the 崑崙 water cluster. The Han-era administrative names in 海內東經 suggest that block is a much later layer. Detail: [`output/connections/shan-hai-seams.md`](../output/connections/shan-hai-seams.md).
 
 ## Stage 3 — `mapping_worthy` annotation
 
@@ -35,6 +35,7 @@ Fixed parameters (explicit, never hidden): 8-compass → 45° bearings · 1 里 
 - **Second source** — none. zh.wikisource is the single source; no cross-checking against 漢典古籍 / 國學大師 / 袁珂《山海經校注》. *(Sam, 2026-11-12)*
 - **望 statements** — included, typed `望` (direction info).
 - **郭璞注** — excluded entirely; the source text is stripped of the commentary.
+- **Output layout** — `output/` is filed by origin volume group (`wuzang-shanjing`, `haiwai-sijing`, `hainei-sijing`, `dahuang-sijing`, `haineijing`), plus `connections/`. *(Sam, 2026-11-12)*
 
 ## Honest limits
 

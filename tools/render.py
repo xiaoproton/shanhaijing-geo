@@ -2,7 +2,7 @@
 """Render the fact database into human-readable Markdown bullet lists.
 
 Usage:  python3 tools/render.py
-Writes one file per 次經 into output/.
+Writes one file per 次經 into output/<group>/.
 """
 import json
 import pathlib
@@ -60,6 +60,29 @@ SLUG = {
     "海內經": "hai-nei-jing",
 }
 
+# Origin-volume groups. Each 次經 is filed under the volume group it belongs to.
+GROUP = {
+    "南山經": "wuzang-shanjing",
+    "西山經": "wuzang-shanjing",
+    "北山經": "wuzang-shanjing",
+    "東山經": "wuzang-shanjing",
+    "中山經": "wuzang-shanjing",
+    "五臧山經": "wuzang-shanjing",
+    "海外南經": "haiwai-sijing",
+    "海外西經": "haiwai-sijing",
+    "海外北經": "haiwai-sijing",
+    "海外東經": "haiwai-sijing",
+    "海內南經": "hainei-sijing",
+    "海內西經": "hainei-sijing",
+    "海內北經": "hainei-sijing",
+    "海內東經": "hainei-sijing",
+    "大荒東經": "dahuang-sijing",
+    "大荒南經": "dahuang-sijing",
+    "大荒西經": "dahuang-sijing",
+    "大荒北經": "dahuang-sijing",
+    "海內經": "haineijing",
+}
+
 SOURCE = {
     "南山經": "zh.wikisource, `山海經/南山經`",
     "西山經": "zh.wikisource, `山海經/西山經`",
@@ -108,7 +131,12 @@ def main():
     OUT.mkdir(exist_ok=True)
     for (volume, chain), items in groups.items():
         slug = SLUG.get(chain, chain)
-        path = OUT / f"{slug}.md"
+        group = GROUP.get(chain) or GROUP.get(volume)
+        if group is None:
+            raise SystemExit(f"no origin-volume group for {volume} / {chain}")
+        folder = OUT / group
+        folder.mkdir(parents=True, exist_ok=True)
+        path = folder / f"{slug}.md"
         path.write_text(render(volume, chain, items), encoding="utf-8")
         print(f"wrote {path.relative_to(ROOT)}  ({len(items)} records)")
 

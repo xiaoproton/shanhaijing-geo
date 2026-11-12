@@ -45,8 +45,22 @@ Why: a verbatim quote can be checked against the source by anyone. A parsed coor
 | [`tools/extract_hai.py`](tools/extract_hai.py) | Draft-extracts the 海經 |
 | [`tools/audit.py`](tools/audit.py) · [`tools/audit_hai.py`](tools/audit_hai.py) | Generate the per-entry "excluded text" reports |
 | [`tools/render.py`](tools/render.py) | Renders the database into the Markdown lists in `output/` |
-| [`output/`](output/) | Generated human-readable bullet lists |
+| [`tools/connections.py`](tools/connections.py) | Finds the 山經 ↔ 海經 connection points |
+| [`output/`](output/) | Generated human-readable bullet lists, filed by origin volume |
 | [`docs/audit/`](docs/audit/) | Per-entry "excluded text" reports |
+
+### `output/` layout
+
+One folder per origin volume group; one file per 次經 inside it.
+
+| Folder | Origin volume | Files |
+|---|---|---|
+| `output/wuzang-shanjing/` | 五藏山經 | 32 |
+| `output/haiwai-sijing/` | 海外四經 | 4 |
+| `output/hainei-sijing/` | 海內四經 | 4 |
+| `output/dahuang-sijing/` | 大荒四經 | 4 |
+| `output/haineijing/` | 海內經 | 1 |
+| `output/connections/` | — | the 山經 ↔ 海經 seam analysis |
 
 ## Source
 
