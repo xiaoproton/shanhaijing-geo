@@ -29,12 +29,12 @@ Draw the map the data implies. Three conventions, rendered side by side:
 
 Fixed parameters (explicit, never hidden): 8-compass → 45° bearings · 1 里 = 1 unit (arbitrary scale, **no km conversion**) · overlaps allowed.
 
-## Open questions
+## Decisions (settled)
 
-- Bracket scope: every implicit referent, or only the 又 pattern?
-- Second source: 漢典古籍 · 國學大師 · or a print edition (袁珂《山海經校注》)?
-- 望 statements: include or not?
-- 郭璞注: separate layer, or excluded entirely?
+- **Bracket scope** — every implicit referent gets one: `又`, `焉` and `其` alike. *(Sam, 2026-11-12)*
+- **Second source** — none. zh.wikisource is the single source; no cross-checking against 漢典古籍 / 國學大師 / 袁珂《山海經校注》. *(Sam, 2026-11-12)*
+- **望 statements** — included, typed `望` (direction info).
+- **郭璞注** — excluded entirely; the source text is stripped of the commentary.
 
 ## Honest limits
 
