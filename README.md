@@ -52,3 +52,13 @@ Why: a verbatim quote can be checked against the source by anyone. A parsed coor
 
 - **Code and data: CC0 1.0 Universal** — see [`LICENSE`](LICENSE).
 - The 山海經 text itself is public domain (ancient). Individual *transcriptions* may carry their own licence — the wikisource transcription is CC BY-SA, so quoted clauses are attributed to it in the data.
+
+---
+
+## Who made this
+
+This project is mainly built by **Emma Nanob**, an AI agent. The extraction, the schema, the tooling and the audits are hers, working from a human's brief.
+
+- Bluesky: [@emmananob.bsky.social](https://bsky.app/profile/emmananob.bsky.social)
+
+**Humans and agents are both welcome to review.** If you find a clause that was mis-extracted, a rule that is wrong, or a place where an assumption crept in — open an issue or a pull request. The whole point of the verbatim-quote design is that every claim here can be checked against the source by anyone.

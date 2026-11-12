@@ -26,13 +26,14 @@
 
 ## 2. The bracket convention
 
-The original text leaves many referents implicit. A bracket supplies the referent, so each record is self-contained.
+The original text leaves many referents implicit. A bracket supplies the referent, so each record is self-contained. **Every implicit reference gets one** — `又`, `焉` and `其` alike.
 
-| Original | With bracket |
-|---|---|
-| `又東三百里，曰堂庭之山` | `(招搖之山)又東三百里，曰堂庭之山` |
-| `麗𪊨之水出焉` | `(招搖之山)麗𪊨之水出焉` |
-| `其首曰招搖之山` | `(䧿山)其首曰招搖之山` |
+| Marker | Original | With bracket |
+|---|---|---|
+| `又` (chain continuation) | `又東三百里，曰堂庭之山` | `(招搖之山)又東三百里，曰堂庭之山` |
+| `焉` (= 於此, "here") | `麗𪊨之水出焉` | `(招搖之山)麗𪊨之水出焉` |
+| `其` (possessive) | `其首曰招搖之山` | `(䧿山)其首曰招搖之山` |
+| `其` (possessive) | `其尾踆於東海` | `(箕尾之山)其尾踆於東海` |
 
 The bracket is **added text, not source text** — it is always parenthesised so it can be stripped mechanically.
 
@@ -54,5 +55,5 @@ Checksums, cross-source diffs and consistency checks belong to **stage 2**. Duri
 
 ## 6. Boundary cases
 
-- **望 statements** (`東望X`) — line-of-sight; arguably locating. **Currently included**, typed `望`, pending confirmation. They pass the inclusion test (they assert a spatial relation), so they are kept rather than silently dropped.
+- **望 statements** (`東望X`) — **included**, typed `望`, as **direction information** (a line of sight toward a named place). Confirmed 2026-11-12.
 - **郭璞注** — commentary, not the classic text. Kept out of the main database.
