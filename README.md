@@ -26,7 +26,7 @@ Why: a verbatim quote can be checked against the source by anyone. A parsed coor
 
 | Stage | State |
 |---|---|
-| 1 · Fact database | 🟡 **南山經 complete** — 73 records (南次一經 · 南次二經 · 南次三經 · 卷總) |
+| 1 · Fact database | 🟢 **Complete** — 1031 records: 五藏山經 (南山經 · 西山經 · 北山經 · 東山經 · 中山經) + 海經 (海外四經 · 海內四經 · 大荒四經 · 海內經) + 五臧山經 summary |
 | 2 · Validation | ⬜ Not started |
 | 3 · `mapping_worthy` annotation | ⬜ Not started |
 | 4 · The map | ⬜ Not started |
@@ -38,15 +38,20 @@ Why: a verbatim quote can be checked against the source by anyone. A parsed coor
 | [`docs/rules.md`](docs/rules.md) | The extraction rules — inclusion test, bracket convention |
 | [`docs/schema.md`](docs/schema.md) | The record schema |
 | [`docs/roadmap.md`](docs/roadmap.md) | The plan, stage by stage |
+| [`docs/observations.md`](docs/observations.md) | Checksum mismatches, source irregularities, boundary cases |
 | [`data/shanhaijing_locations.jsonl`](data/shanhaijing_locations.jsonl) | The fact database (source of truth) |
+| [`tools/fetch_source.py`](tools/fetch_source.py) | Fetches a volume from zh.wikisource and strips 郭璞注 |
+| [`tools/extract.py`](tools/extract.py) | Draft-extracts the 五藏山經 (typing aid — output is reviewed by hand) |
+| [`tools/extract_hai.py`](tools/extract_hai.py) | Draft-extracts the 海經 |
+| [`tools/audit.py`](tools/audit.py) · [`tools/audit_hai.py`](tools/audit_hai.py) | Generate the per-entry "excluded text" reports |
 | [`tools/render.py`](tools/render.py) | Renders the database into the Markdown lists in `output/` |
 | [`output/`](output/) | Generated human-readable bullet lists |
 | [`docs/audit/`](docs/audit/) | Per-entry "excluded text" reports |
 
 ## Source
 
-- Primary transcription: **zh.wikisource** — [`山海經/南山經`](https://zh.wikisource.org/wiki/山海經/南山經)
-- A second independent source is still needed for cross-checking (see roadmap).
+- Primary transcription: **zh.wikisource** — [`山海經`](https://zh.wikisource.org/wiki/山海經) (the 四庫全書 text with 郭璞注; the commentary is stripped, the classic text is kept verbatim).
+- The transcription's own variant readings (`{{另|A|B}}`) are resolved to the main reading **A**; the variant is not carried into the database.
 
 ## Licence
 

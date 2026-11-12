@@ -44,10 +44,13 @@ def resolve_variants(s):
 
 
 def clean(raw):
+    raw = re.sub(r"<ref[^>]*>.*?</ref>", "", raw, flags=re.S)
+    raw = re.sub(r"<ref[^>]*/>", "", raw)
     raw = resolve_variants(raw)
     raw = strip_templates(raw)
     raw = strip_links(raw)
     raw = re.sub(r"'''?", "", raw)
+    raw = re.sub(r"【[^】]*】", "", raw)
     raw = re.sub(r"<[^>]+>", "", raw)
     return raw
 

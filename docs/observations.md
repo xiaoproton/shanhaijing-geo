@@ -87,6 +87,35 @@ The twelve 小結 sum to **197 山** (matching the 卷-level count) and **28595 
 
 Recorded as WZ-01/WZ-02. The 五藏山經's own 197 山 / 21371 里 (中山經 卷總) is a different figure from the 5370 山 / 64056 里 here — the latter counts the whole world, not the 五藏山經.
 
+## 海經
+
+The 海經 has **no 小結 and no distances** — it is a gazetteer of places given by relative position (`X在Y東`, `X在其西南`) and by containment (`大荒之中，有山名曰X`). There is therefore no checksum to test. What it does have is a **directional chain**: in the 海外四經 each entry is placed relative to the one before it, so the chain can be walked end to end.
+
+| volume | records | 相对方位 | 水系 |
+|---|---|---|---|
+| 海外南經 | 36 | 35 | 1 |
+| 海外西經 | 16 | 16 | 0 |
+| 海外北經 | 19 | 19 | 0 |
+| 海外東經 | 20 | 20 | 0 |
+| 海內南經 | 14 | 13 | 1 |
+| 海內西經 | 12 | 7 | 5 |
+| 海內北經 | 10 | 10 | 0 |
+| 海內東經 | 44 | 15 | 29 |
+| 大荒東經 | 15 | 12 | 3 |
+| 大荒南經 | 17 | 12 | 5 |
+| 大荒西經 | 9 | 9 | 0 |
+| 大荒北經 | 10 | 9 | 1 |
+| 海內經 | 15 | 12 | 3 |
+| **total** | **237** | **194** | **43** |
+
+Notes:
+
+- **`一曰` variants are recorded as their own records.** The 海外四經 give an alternate reading for most entries (`一曰南山在結匈東南`); both the main clause and the variant assert a spatial relation, so both are kept.
+- **The 海內東經 is mostly a river list** (`X水出Y`) — 29 of its 44 records are 水系, and it is the only volume where 水系 outnumbers 相对方位.
+- **Overlapping text between volumes is preserved.** `高柳在代北` appears in both 海內西經 and 海內北經; `匈奴、開題之國、列人之國並在西北` appears in both 海內南經 and 海內北經. Both are recorded where they occur.
+- **Section headers are recorded.** `海外自西南陬至東南陬者` and its siblings define the extent of each 海外經; they are kept as 相对方位 records.
+- **`葬于陽` / `葬于陰`** (`帝堯葬于陽`, `帝嚳葬于陰`, …) are recorded as 相对方位: they place a burial on the south/north slope of the named mountain.
+
 ## Source irregularities (preserved verbatim)
 
 | id | irregularity |

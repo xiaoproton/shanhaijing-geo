@@ -45,6 +45,19 @@ SLUG = {
     "中次十二經": "zhong-ci-shi-er-jing",
     "中山經（總）": "zhong-shan-jing-total",
     "五臧山經（總）": "wu-zang-shan-jing-total",
+    "海外南經": "hai-wai-nan-jing",
+    "海外西經": "hai-wai-xi-jing",
+    "海外北經": "hai-wai-bei-jing",
+    "海外東經": "hai-wai-dong-jing",
+    "海內南經": "hai-nei-nan-jing",
+    "海內西經": "hai-nei-xi-jing",
+    "海內北經": "hai-nei-bei-jing",
+    "海內東經": "hai-nei-dong-jing",
+    "大荒東經": "da-huang-dong-jing",
+    "大荒南經": "da-huang-nan-jing",
+    "大荒西經": "da-huang-xi-jing",
+    "大荒北經": "da-huang-bei-jing",
+    "海內經": "hai-nei-jing",
 }
 
 SOURCE = {
@@ -53,6 +66,7 @@ SOURCE = {
     "北山經": "zh.wikisource, `山海經/北山經`",
     "東山經": "zh.wikisource, `山海經/東山經`",
     "中山經": "zh.wikisource, `山海經/中山經`",
+    "海經": "zh.wikisource, `山海經/海外四經` · `海內四經` · `大荒四經` · `海內經`",
 }
 
 
