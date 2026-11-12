@@ -20,11 +20,13 @@ DIST = rf"{NUM}{LI}(?:{NUM}{LI})?"
 RE_HEAD = re.compile(r"^(.*?)(?:之首[，,]?曰|之首曰)([^，。；]+)")
 RE_CHAIN = re.compile(rf"^(?:又)?(?:{DIRS})?(?:水行)?{DIST}[，,]?(?:曰|至[於于]?)?[^，。；]+")
 RE_CHAIN_NAME = re.compile(rf"^(?:又)?(?:{DIRS})?(?:水行)?{DIST}[，,]?(?:曰|至[於于]?)?(.+)$")
-RE_WATER = re.compile(r"^[^，。；]*水(?:出焉|出于)[^，。；]*(?:，[^，。；]*(?:流|注|潛)[^，。；]*)?")
+RE_CHAIN2 = re.compile(r"^至[於于][^，。；]+")
+RE_CHAIN2_NAME = re.compile(r"^至[於于](.+)$")
+RE_WATER = re.compile(r"^[^，。；]*水(?:出焉|出于)[^，。；]*(?:，[^，。；]*(?:流|注|潛|潜)[^，。；]*)?")
 RE_WANG = re.compile(rf"^(?:{DIRS})望[^，。；]+")
 RE_ADJ = re.compile(r"^(?:在[^，。；]+之[東南西北]|臨[^，。；]+|其[東南西北]有[^，。；]*(?:，曰[^，。；]*)?)")
 RE_SHORE = re.compile(r"^(?:處于|是錞于)[^，。；]+")
-RE_SUM = re.compile(r"^(?:凡|右)[^。]*")
+RE_SUM = re.compile(r"^(?:凡|右)[^。]*?[里裏]")
 RE_SUBSUM = re.compile(rf"自[^，。；]+至[於于][^，。；]+，[^，。；]*{LI}")
 
 OTHER = [
@@ -60,17 +62,34 @@ def extract(body, chain, prefix, volume):
             recs.append(("首山", m.group(0), None))
             prev = m.group(2).strip()
             rest = rest[m.end():]
+        elif "之首" in rest:
+            nm = re.search(r"其名曰([^，。；]+)", rest)
+            if nm:
+                end = rest.index("。") if "。" in rest else len(rest)
+                recs.append(("首山", rest[:end], None))
+                prev = nm.group(1).strip()
+                rest = rest[end:]
         while True:
             rest = rest.lstrip("，。；")
             m = RE_CHAIN.match(rest)
-            if not m:
-                break
-            clause = m.group(0)
-            nm = RE_CHAIN_NAME.match(clause)
-            recs.append(("链式方位距离", clause, prev))
-            if nm:
-                prev = nm.group(1).strip()
-            rest = rest[m.end():]
+            if m:
+                clause = m.group(0)
+                nm = RE_CHAIN_NAME.match(clause)
+                recs.append(("链式方位距离", clause, prev))
+                if nm:
+                    prev = nm.group(1).strip()
+                rest = rest[m.end():]
+                continue
+            m = RE_CHAIN2.match(rest)
+            if m:
+                clause = m.group(0)
+                nm = RE_CHAIN2_NAME.match(clause)
+                recs.append(("链式方位距离", clause, prev))
+                if nm:
+                    prev = nm.group(1).strip()
+                rest = rest[m.end():]
+                continue
+            break
         while rest:
             rest = rest.lstrip("，。；")
             if not rest:
