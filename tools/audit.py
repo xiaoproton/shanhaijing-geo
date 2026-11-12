@@ -11,8 +11,11 @@ import sys
 
 from extract import (
     OTHER,
-    RE_CHAIN,
-    RE_CHAIN_NAME,
+    RE_CHAIN2,
+    RE_CHAIN3,
+    RE_CHAIN_BARE,
+    RE_CHAIN_CORE,
+    RE_CHAIN_TAIL,
     RE_HEAD,
     RE_SUBSUM,
     RE_SUM,
@@ -43,11 +46,32 @@ def split_kept(p):
         rest = rest[m.end():]
     while True:
         rest = rest.lstrip("，。；")
-        m = RE_CHAIN.match(rest)
-        if not m:
-            break
-        kept.append(m.group(0))
-        rest = rest[m.end():]
+        m = RE_CHAIN_CORE.match(rest)
+        if m:
+            clause = m.group(0)
+            rest = rest[m.end():]
+            t = RE_CHAIN_TAIL.match(rest)
+            if t:
+                clause += t.group(0)
+                rest = rest[t.end():]
+            else:
+                b = RE_CHAIN_BARE.match(rest)
+                if b:
+                    clause += b.group(0)
+                    rest = rest[b.end():]
+            kept.append(clause)
+            continue
+        m = RE_CHAIN3.match(rest)
+        if m:
+            kept.append(m.group(0))
+            rest = rest[m.end():]
+            continue
+        m = RE_CHAIN2.match(rest)
+        if m:
+            kept.append(m.group(0))
+            rest = rest[m.end():]
+            continue
+        break
     while rest:
         rest = rest.lstrip("，。；")
         if not rest:
@@ -71,6 +95,7 @@ def split_kept(p):
     excluded = p
     for k in kept:
         excluded = excluded.replace(k, "", 1)
+    excluded = re.sub(r"[，。；]{2,}", "。", excluded)
     return kept, excluded
 
 
@@ -78,11 +103,17 @@ def entry_name(p):
     m = RE_HEAD.match(p)
     if m:
         return m.group(2).strip()
-    m = RE_CHAIN.match(p)
+    m = RE_CHAIN_CORE.match(p)
     if m:
-        nm = RE_CHAIN_NAME.match(m.group(0))
-        if nm:
-            return nm.group(1).strip()
+        rest = p[m.end():]
+        t = RE_CHAIN_TAIL.match(rest)
+        if t:
+            nm = re.search(r"(?:曰|至[於于]?)([^，。；]+)$", t.group(0))
+            if nm:
+                return nm.group(1).strip()
+        b = RE_CHAIN_BARE.match(rest)
+        if b:
+            return b.group(0).strip("，,")
     return p[:12]
 
 

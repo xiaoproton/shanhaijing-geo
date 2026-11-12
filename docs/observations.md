@@ -40,6 +40,18 @@ The four 小結 sum to **19+17+23+19 = 78 山** and **2957+4140+6744+3680 = 1752
 
 The three 小結 sum to **25+17+46 = 88 山** and **5490+5690+12350 = 23530 里** — the 卷-level total says 87 山 / 23230 里. Note the 卷-level *count* (87) matches the chain listing (25+16+46), so the 北次二經 小結's "十七山" is the odd one out.
 
+### 東山經
+
+| chain | 小結 states | chain actually lists | distance stated | distance summed |
+|---|---|---|---|---|
+| 東次一經 | 12 山 | 12 山 ✓ | 3600 里 | 3500 里 |
+| 東次二經 | 17 山 | 17 山 ✓ | 6640 里 | 6640 里 ✓ |
+| 東次三經 | 9 山 | 9 山 ✓ | 6900 里 | 6600 里 |
+| 東次四經 | 8 山 | 8 山 ✓ | 1720 里 | 1720 里 ✓ |
+| 東山經（總） | 46 山 | 46 山 ✓ | 18860 里 | 18860 里 ✓ |
+
+The four 小結 sum to **12+17+9+8 = 46 山** and **3600+6640+6900+1720 = 18860 里** — both match the 卷-level total exactly. This is the first volume whose 卷-level checksum is internally consistent.
+
 ## Source irregularities (preserved verbatim)
 
 | id | irregularity |
@@ -63,15 +75,22 @@ The three 小結 sum to **25+17+46 = 88 山** and **5490+5690+12350 = 23530 里*
 | B3-40 | `東三百里` — lacks 又 |
 | B3-86 | `北百二十里` — lacks 又 |
 | B3-100 | 小結 says `無逢之山`, the chain says `錞于毋逢之山` |
+| D1-02 | `食水出焉。而東北流注于海` — sentence break where the rest of the volume uses a comma |
+| D1-06 | `掛水出焉。而北流注于湖水` — same |
+| D3-01 | `又《東次三經》之首` — carries a leading 又 |
+| D3-08 | `其上有水出焉，名曰碧陽` — the water is named in a following clause |
+| D3-10 | `行五百里，有山焉，曰跂踵之山` — not the usual `又…里` form |
+| D4-01 | `又《東次四經》之首` — carries a leading 又 |
 
 ## Boundary cases
 
-- **望 statements** — included, typed `望`, as direction information (confirmed 2026-11-12). 南山經: 5 records. 西山經: 11 records (X3-03…06, X3-10, X3-12, X3-21…24, X3-48). 北山經: 4 records (B3-17, B3-18, B3-97, B3-98).
+- **望 statements** — included, typed `望`, as direction information (confirmed 2026-11-12). 南山經: 5 (N2-03, N2-04, N2-12, N2-13, N2-33). 西山經: 11 (X3-03…06, X3-10, X3-12, X3-21…24, X3-48). 北山經: 4 (B3-18, B3-19, B3-98, B3-99). 東山經: 7 (D2-03…05, D2-28, D3-02, D3-13, D3-14).
 - **`西望日之所入` (X3-48)** — the referent is a description, not a place name. Included anyway, flagged.
-- **Vague locators with no distance** — `臨於西海之上` (N1-03) · `其尾踆於東海` (N1-15) · `西臨流黃` (N2-02) · `處于東海` (N2-32) · `其南有谷，曰育遺` (N3-09) · `其南有谷焉，曰中谷` (N3-16) · `在河之南` (X3-02) · `臨彼嶽崇之山` (X3-11) · `是錞于西海` (X1-36) · `其東有林焉` (B3-37) · `是錞于北海` (B2-29).
+- **Vague locators with no distance** — `臨於西海之上` (N1-03) · `其尾踆於東海` (N1-15) · `西臨流黃` (N2-02) · `處于東海` (N2-32) · `其南有谷，曰育遺` (N3-09) · `其南有谷焉，曰中谷` (N3-16) · `在河之南` (X3-02) · `臨彼嶽崇之山` (X3-11) · `是錞于西海` (X1-36) · `其東有林焉` (B3-38) · `是錞于北海` (B2-29) · `北臨乾昧` (D1-02) · `北臨食水` (D2-02) · `南臨䃌水` (D2-27) · `東臨扶木` (D4-02).
 - **Sub-chain distance** — `自峚山至于鍾山，四百六十裏` (X3-15) — a distance between two named places inside an entry, not a 小結. Typed `小结`.
 - **首山 clause carrying extra locators** — 北次二經's opening is `《北次二經》之首，在河之東，其首枕汾，其名曰管涔之山` (B2-01): the naming clause, a 相对方位 and a 首-pivot all in one sentence, recorded as one verbatim record.
-- **Chain node that is not a mountain** — `泰澤` (B3-95 → B3-96) is a marsh, not a 山, but it is a chain node and is recorded as one.
+- **`其首曰X` (peak-naming)** — `其首曰招搖之山` (N1-02) and `其首曰歸山` (B3-02) name the first *peak* of the chain's opening mountain. Recorded as their own records. **The chain referent is taken from the 小結, not from this clause**: 南山經's 小結 runs `自招搖之山`, so its chain referent is 招搖之山; 北次三經's runs `自太行之山`, so its referent stays 太行之山. The two chains resolve differently and each follows its own 小結.
+- **Chain node that is not a mountain** — `泰澤` (B3-95 → B3-96) and `流沙` (D3-09 → D3-10) are a marsh and a desert, not 山, but they are chain nodes and are recorded as such.
 
 ## Cross-source check
 

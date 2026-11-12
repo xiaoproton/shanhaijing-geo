@@ -94,3 +94,4 @@ Generated from: `data/shanhaijing_locations.jsonl`
 
 **B2-29** · 小结
 > 凡《北次二經》之首，自管涔之山至于敦題之山，凡十七山，五千六百九十里
+*首山句含相对方位「在河之東」及「其首枕汾」，一并照录。*
