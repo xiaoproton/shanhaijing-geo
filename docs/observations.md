@@ -49,8 +49,8 @@ The four 小結 sum to **19+17+23+19 = 78 山** and **2957+4140+6744+3680 = 1752
 
 ## Boundary cases
 
-- **望 statements** — included, typed `望`, as direction information (confirmed 2026-11-12). 南山經: 5 records. 西山經: 11 records (X3-03…06, X3-10, X3-12, X3-20…23, X3-47).
-- **`西望日之所入` (X3-47)** — the referent is a description, not a place name. Included anyway, flagged.
+- **望 statements** — included, typed `望`, as direction information (confirmed 2026-11-12). 南山經: 5 records. 西山經: 11 records (X3-03…06, X3-10, X3-12, X3-21…24, X3-48).
+- **`西望日之所入` (X3-48)** — the referent is a description, not a place name. Included anyway, flagged.
 - **Vague locators with no distance** — `臨於西海之上` (N1-03) · `其尾踆於東海` (N1-15) · `西臨流黃` (N2-02) · `處于東海` (N2-32) · `其南有谷，曰育遺` (N3-09) · `其南有谷焉，曰中谷` (N3-16) · `在河之南` (X3-02) · `臨彼嶽崇之山` (X3-11) · `是錞于西海` (X1-36).
 - **Sub-chain distance** — `自峚山至于鍾山，四百六十裏` (X3-15) — a distance between two named places inside an entry, not a 小結. Typed `小结`.
 
